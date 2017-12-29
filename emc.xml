@@ -189,8 +189,8 @@
         </script>
 
         <script>
-            if ('ifr/serviceWorker' in navigator) {
-                navigator.serviceWorker.register('service-worker')
+            if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.register('ifr/service-worker')
                     .then(function (registration) {
                         console.log('Service Worker registration successful with scope: ',
                             registration.scope);
