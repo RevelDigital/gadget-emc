@@ -189,25 +189,14 @@
         </script>
 
         <script type="text/javascript">
-            if ('serviceWorker' in navigator) {
-                navigator.serviceWorker.register('service-worker')
-                    .then(function (registration) {
-                        console.log('Service Worker registration successful with scope: ',
-                            registration.scope);
-                    })
-                    .catch(function (err) {
-                        console.log('Service Worker registration failed: ', err);
-                    });
-                    
-                caches.open('gadget-cache-v1').then(function(cache) {
-                    var updateCache = cache.add('/' + (location.pathname+location.search).substr(1));
-                    updateCache.then(function() {
-                        console.log('Gadget is now available offline.');
-                    }).catch(function (error) {
-                        console.log('Gadget could not be saved offline.');
-                    });
-                });
-            }
+        
+          if('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('service-worker')
+            .then(registration =>
+              console.log('Service Worker Registered')
+            );
+          }
+          
         </script>
 
         ]]>
